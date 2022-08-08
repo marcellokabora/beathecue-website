@@ -4,7 +4,7 @@
             <div *ngIf="radio===index" data-aos="fade-up" data-aos-duration="600">
                 <ng-container *ngIf="item.event.split('') as name">
                     <span class="bigger">{{name[0]}}</span>
-                    <span>{{(name| tail: 1).join('')}}</span>
+                    <span>{{(name | tail:1).join('')}}</span>
                 </ng-container>
             </div>
         </div>

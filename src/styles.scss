@@ -1,39 +1,62 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
-// Plus imports for other components in your app.
-
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
+@use "@angular/material" as mat;
 @include mat.core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$beathecue-website-primary: mat.define-palette(mat.$indigo-palette);
-$beathecue-website-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-
-// The warn palette is optional (defaults to red).
-$beathecue-website-warn: mat.define-palette(mat.$red-palette);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$beathecue-website-theme: mat.define-light-theme((
-  color: (
-    primary: $beathecue-website-primary,
-    accent: $beathecue-website-accent,
-    warn: $beathecue-website-warn,
+$beathecue-home-primary: mat.define-palette(mat.$indigo-palette);
+$beathecue-home-accent: mat.define-palette(mat.$grey-palette, A200, A100, A400);
+$beathecue-home-warn: mat.define-palette(mat.$red-palette);
+$beathecue-home-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $beathecue-home-primary,
+      accent: $beathecue-home-accent,
+      warn: $beathecue-home-warn,
+    ),
   )
-));
+);
+@include mat.all-component-themes($beathecue-home-theme);
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include mat.all-component-themes($beathecue-website-theme);
+@import "aos/dist/aos.css";
 
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --primary: #333333;
+  --secondary: #8f9deb;
+  --red: rgb(199, 59, 59);
+  --green: rgb(67, 180, 128);
+  --pink: rgb(159, 51, 221);
+  --blue: rgb(57, 160, 219);
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-radio-outer-circle {
+  border-color: rgb(255 255 255 / 54%) !important;
+}
+
+.mat-menu-content {
+  background-color: black !important;
+  button,
+  .mat-icon {
+    color: white !important;
+  }
+}
+
+.dialoglogin{
+    padding: 0;
+    .mat-dialog-container{
+      // background-color: black;
+      // color: white;
+    }
+}
+
+.searchclub{
+    margin-top: 10px;
+    background-color: red;
+}
