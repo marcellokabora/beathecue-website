@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "beathecue": {
+      "hosting": {
+        "beathecue-website": [
+          "beathecue-home"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "beathecue"
+  }
+}
