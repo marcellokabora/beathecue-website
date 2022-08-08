@@ -11,7 +11,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAnalytics, getAnalytics, ScreenTrackingService, UserTrackingService } from '@angular/fire/analytics';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore'
-import { WelcomeComponent } from './page/welcome/welcome.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
