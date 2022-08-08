@@ -40,7 +40,7 @@ export class BigpicComponent {
   ) { }
 
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     if (this.setting.length > 1)
       this.iradio = interval(8000).subscribe(() => {
         this.radio === this.setting.length - 1 ? this.radio = 0 : this.radio++
@@ -49,7 +49,8 @@ export class BigpicComponent {
   }
 
   iRadio() {
-    this.iradio.unsubscribe();
+    if (this.setting.length > 1)
+      this.iradio.unsubscribe()
     this.changeClub.emit(this.setting[this.radio])
   }
 

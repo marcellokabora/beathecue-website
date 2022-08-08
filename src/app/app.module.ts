@@ -57,8 +57,7 @@ import { TextfloatComponent } from './component/textfloat/textfloat.component';
     BigpicComponent,
     LoginComponent,
     TextpicComponent,
-    TextfloatComponent
-  ],
+    TextfloatComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
