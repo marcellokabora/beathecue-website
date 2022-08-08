@@ -1,7 +1,7 @@
 <div mat-dialog-content>
     <div class="login">
         <div class="form">
-            <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <!-- <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
                     <input matInput type="email" formControlName="email">
@@ -27,7 +27,7 @@
                     <span *ngIf="!loading">LOGIN</span>
                     <mat-spinner diameter="20" strokeWidth="2" *ngIf="loading"></mat-spinner>
                 </button>
-            </form>
+            </form> -->
             <button mat-button class="register" routerLink="/register">Register</button>
         </div>
         <!-- <div class="socialogin">

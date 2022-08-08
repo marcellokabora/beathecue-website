@@ -35,16 +35,16 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    if (this.formGroup.valid) {
-      this.loading = true
-      this.auth.signInWithEmailAndPassword(this.formGroup.controls.email.value, this.formGroup.controls.password.value).then(() => {
-        this.dialogRef.close()
-      }).catch(error => {
-        this.loading = false
-        this.errorEmail = error.code === 'auth/user-not-found'
-        this.errorPassword = error.code === 'auth/wrong-password'
-      })
-    }
+    // if (this.formGroup.valid) {
+    //   this.loading = true
+    //   this.auth.signInWithEmailAndPassword(this.formGroup.controls.email.value, this.formGroup.controls.password.value).then(() => {
+    //     this.dialogRef.close()
+    //   }).catch(error => {
+    //     this.loading = false
+    //     this.errorEmail = error.code === 'auth/user-not-found'
+    //     this.errorPassword = error.code === 'auth/wrong-password'
+    //   })
+    // }
   }
 
 }
