@@ -1,0 +1,21 @@
+<div class="welcome">
+    <div class="section">
+        <app-navbar></app-navbar>
+        <app-bigpic *ngIf="iBigpic" [setting]="iBigpic"></app-bigpic>
+    </div>
+    <ng-container *ngIf="iBigpic[0]">
+        <div class="prelative">
+            <app-textpic [setting]="iBigpic[0]"></app-textpic>
+        </div>
+        <div class="prelative">
+            <app-textfloat></app-textfloat>
+            <app-textpic [setting]="iBigpic[0]" [reverse]="true"></app-textpic>
+        </div>
+        <div class="prelative">
+            <app-textfloat [reverse]="true"></app-textfloat>
+            <app-textpic [setting]="iBigpic[0]"></app-textpic>
+            <app-textfloat [lastone]="true"></app-textfloat>
+        </div>
+    </ng-container>
+    <app-footer></app-footer>
+</div>

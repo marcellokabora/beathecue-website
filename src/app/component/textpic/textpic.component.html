@@ -1,0 +1,20 @@
+<div class="section subsection dflex skewY" [ngClass]="{reverse: reverse}" [style.backgroundColor]="setting.color">
+    <div class="bgopacity"></div>
+    <div class="container" data-aos="fade-up">
+        <div class="block block-photo">
+            <ng-container *ngFor="let item of setting.more?.items; index as index">
+                <img [src]="item.photo" alt="" data-aos="zoom-in" data-aos-duration="800" *ngIf="radio===index">
+            </ng-container>
+        </div>
+        <ng-container *ngFor="let item of setting.more?.items; index as index">
+            <div class="block block-text" data-aos="zoom-in" data-aos-duration="800" *ngIf="radio===index">
+                <mat-radio-group [(ngModel)]="radio">
+                    <mat-radio-button *ngFor="let item of setting.more?.items; index as index" [value]="index"></mat-radio-button>
+                </mat-radio-group>
+                <div class="title">{{item.title}}</div>
+                <div class="infos">{{item.infos}}</div>
+                <div class="shape" [style.backgroundColor]="setting.color"></div>
+            </div>
+        </ng-container>
+    </div>
+</div>

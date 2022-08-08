@@ -1,0 +1,25 @@
+<div class="section">
+    <ng-container *ngFor="let item of setting | filterby; index as index">
+        <div class="tito skewY">
+            <div *ngIf="radio===index" data-aos="fade-up" data-aos-duration="600">
+                <ng-container *ngIf="item.event.split('') as name">
+                    <span class="bigger">{{name[0]}}</span>
+                    <span>{{(name| tail: 1).join('')}}</span>
+                </ng-container>
+            </div>
+        </div>
+        <img class="back" data-aos="fade-down" data-aos-duration="1200" *ngIf="radio===index" [src]="item.photo" alt="">
+    </ng-container>
+    <div class="block skewY">
+        <ng-container *ngFor="let item of setting | filterby; index as index">
+            <div data-aos="fade-up" data-aos-duration="600" *ngIf="radio===index">
+                <h1>{{item.title}}</h1>
+                <p class="infos">{{item.infos}}</p>
+                <button mat-raised-button color="primary" class="btnmore" [style.backgroundColor]="item.color" [routerLink]="'/club/'+item.id">DISCOVER</button>
+            </div>
+        </ng-container>
+        <mat-radio-group [(ngModel)]="radio" (ngModelChange)="iRadio()" *ngIf="setting.length>1">
+            <mat-radio-button *ngFor="let item of setting | filterby; index as index" [value]="index"></mat-radio-button>
+        </mat-radio-group>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="navbar">
+    <div class="logo skewY" routerLink="/"><img src="/assets/btc.svg" alt=""></div>
+    <span class="example-spacer"></span>
+    <div class="bartop">
+        <ng-container *ngIf="!isearch">
+            <button mat-button routerLink="/clubs">Clubs</button>
+            <button mat-button (click)="iLink('//app.beathecue.com')">App</button>
+            <button mat-button (click)="isearch=true">Search</button>
+        </ng-container>
+        <input *ngIf="isearch" class="search" type="text" placeholder="Search" [formControl]="searchControl" [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" classList="searchclub" (optionSelected)="iSelect($event.option.value.id)">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option.name}}
+            </mat-option>
+        </mat-autocomplete>
+        <button mat-mini-fab [matMenuTriggerFor]="menu" *ngIf="(auth.user | async)">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+        <button mat-mini-fab *ngIf="!(auth.user | async)" (click)="iLogin()">
+            <mat-icon>account_circle</mat-icon>
+        </button>
+    </div>
+</div>
+<mat-menu #menu="matMenu">
+    <ng-container *ngIf="auth.user | async as user">
+        <button mat-menu-item>
+            <mat-icon>face</mat-icon>
+            <span>{{user.email}}</span>
+        </button>
+        <button mat-menu-item (click)="iLogout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </ng-container>
+</mat-menu>

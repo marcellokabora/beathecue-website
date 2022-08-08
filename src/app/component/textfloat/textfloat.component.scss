@@ -1,0 +1,31 @@
+.block-titox {
+    position: absolute;
+    top: -200px;
+    left: 100px;
+    background-color: black;
+    padding: 50px;
+    z-index: 1;
+    height: 150px;
+    width: 50vw;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    &.reverse {
+        right: 100px;
+        left: auto;
+        top: -250px;
+    }
+    &.lastone {
+        top: auto;
+        bottom: -130px;
+        background-color: white;
+        color: black;
+    }
+
+
+    @media(max-width: 800px){
+        height: auto;
+        .infos{
+            margin: 0;
+        }
+    }
+
+}

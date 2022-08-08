@@ -1,0 +1,33 @@
+.footer {
+    background-color: black;
+    padding-top: 400px;
+    margin-top: -200px;
+    color: white;
+    .main {
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 40px;
+        font-weight: normal;
+        font-size: 15px;
+        text-transform: uppercase;
+        .menu {
+            display: flex;
+            align-items: center;
+            button {
+                padding: 10px 20px;
+                font-size: 17px;
+                border-radius: 100px;
+            }
+            .dot {
+                padding: 0px 10px;
+            }
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
