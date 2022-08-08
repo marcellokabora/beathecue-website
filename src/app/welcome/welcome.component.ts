@@ -18,7 +18,6 @@ export class WelcomeComponent {
     private apirequest: ApirequestService
   ) {
 
-
     this.apirequest.getCollection().valueChanges().subscribe((clubs: Club[]) => {
       this.iBigpic = clubs.map(club => {
         return {
@@ -51,7 +50,6 @@ export class WelcomeComponent {
         }
       }).reverse()
       this.clubDisplayed = this.iBigpic[0]
-      console.log(this.iBigpic);
     })
 
   }

@@ -43,6 +43,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BigpicComponent, pipeFilterBy } from './component/bigpic/bigpic.component';
 import { LoginComponent } from './component/login/login.component';
+import { TextpicComponent } from './component/textpic/textpic.component';
+import { TextfloatComponent } from './component/textfloat/textfloat.component';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { LoginComponent } from './component/login/login.component';
     FooterComponent,
     pipeFilterBy,
     BigpicComponent,
-    LoginComponent
+    LoginComponent,
+    TextpicComponent,
+    TextfloatComponent
   ],
   imports: [
     BrowserModule,
