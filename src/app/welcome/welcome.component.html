@@ -2,7 +2,7 @@
 
 <div class="welcome">
     <app-bigpic *ngIf="iBigpic" [setting]="iBigpic" (changeClub)="clubDisplayed=$event"></app-bigpic>
-    <!-- <ng-container *ngIf="clubDisplayed">
+    <ng-container *ngIf="clubDisplayed">
         <div class="prelative">
             <app-textpic [setting]="clubDisplayed"></app-textpic>
         </div>
@@ -15,6 +15,6 @@
             <app-textpic [setting]="clubDisplayed"></app-textpic>
             <app-textfloat [lastone]="true"></app-textfloat>
         </div>
-    </ng-container> -->
+    </ng-container>
     <app-footer></app-footer>
 </div>
